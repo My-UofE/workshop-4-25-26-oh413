@@ -2,10 +2,10 @@
 public class Rectangle {
   
   // 4 instance attributes
-  public double width;
-  public double height;
-  public double originX = 0.0;
-  public double originY = 0.0;
+  private double width;
+  private double height;
+  private double originX = 0.0;
+  private double originY = 0.0;
 
   // 1 static attributes
   public static final int NUMBER_OF_SIDES = 4;
@@ -66,5 +66,29 @@ public class Rectangle {
   public double getPerimeter() {
     return 2 * (width + height);
   }
-  
+
+  public double getWidth(){
+    return this.width;
+  }
+  public void setWidth(double width){
+    if (width > 0){
+      this.width = width;
+    }
+  }
+
+  public double getHeight(){
+    return this.height;
+  }
+  public void setHeight(double height){
+    if (height > 0){
+      this.height = height;
+    }
+  }
+
+  public double getOriginX(){
+    return this.originX;
+  }
+  public double getOriginY(){
+    return this.originY;
+  }
 }
