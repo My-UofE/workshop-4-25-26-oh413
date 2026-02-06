@@ -91,4 +91,11 @@ public class Rectangle {
   public double getOriginY(){
     return this.originY;
   }
+
+  // Return a description of a rectangle in the form of
+  // Rectangle[x=*,y=*,w=*,h=*]
+  @Override
+  public String toString(){
+    return "Rectangle[x="+originX+",y="+originY+",w="+width+",h="+height+"]";
+  }
 }
