@@ -39,8 +39,22 @@ public class Rectangle {
   }
 
   public boolean isOverlappedWith(Rectangle r){
-    
-    return false;
+    if ((this.originX > r.originX + r.width) || (r.originX > this.originX + this.width)){
+      return false;
+    }
+    return !((this.originY > r.originY + r.height) || (r.originY > this.originY + this.height));
+  }
+
+  public static boolean areOverlapping(Rectangle r1, Rectangle r2){
+    return r1.isOverlappedWith((r2));
+  }
+
+  public double calcRatio(){
+    return (this.width/this.height);
+  }
+
+  public boolean isSquare(){
+    return (this.width - 0.000001 <= this.height && this.height <= this.width + 0.000001);
   }
 
   // method: compute the area of the rectangle
