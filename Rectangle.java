@@ -11,17 +11,36 @@ public class Rectangle {
   public static final int NUMBER_OF_SIDES = 4;
 
   // main constructor
-  public Rectangle(double w, double h, double oX, double oY) {
-    width = w;
-    height = h;
-    originX = oX;
-    originY = oY;
+  public Rectangle(double width, double height, double originX, double originY) {
+    this.width = width;
+    this.height = height;
+    this.originX = originX;
+    this.originY = originY;
+  }
+  public Rectangle(double width, double height){
+    this(width, height, 0, 0);
+  }
+  public Rectangle(){
+    this(1, 1);
   }
 
   // method: move the rectangle
   public void move(double dx, double dy) {
 	   originX += dx;
 	   originY += dy;
+  }
+
+  public void scale(double scaleX, double scaleY){
+    this.width = width * scaleX;
+    this.height = height * scaleY;
+  }
+  public void scale(double scale){
+    this.scale(scale, scale);
+  }
+
+  public boolean isOverlappedWith(Rectangle r){
+    
+    return false;
   }
 
   // method: compute the area of the rectangle
